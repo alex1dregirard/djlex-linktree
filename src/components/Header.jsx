@@ -36,8 +36,9 @@ const Header = () => {
       <div style={contentStyle}>
         <h1 style={{ fontSize: '2.5rem', margin: '10px 0' }}>dj lex</h1>
         <p style={{ fontSize: '1.2rem', margin: '5px 0' }}>
-          🎧 Ambiance & énergie garantie <br />
-          Sets Afro / Groove / Club & Culture
+          🎧 NOUVEAU MIX DISPONIBLE
+          Style : Afro / House / Techno
+          Ambiance : sunset – club – summer vibes ☀️
         </p>
       </div>
     </header>

@@ -1,4 +1,5 @@
 import React from 'react';
+import InstagramLink from './InstagramLink';
 
 const Hero = () => {
   return (
@@ -7,11 +8,14 @@ const Hero = () => {
       <div className="hero__content">
         <h1 className="title">dj lex</h1>
         <p className="subtitle">
-          <span className="emoji">🎧</span>
-          Ambiance & énergie garantie
+          <span className="emoji">🎧</span>NOUVEAU MIX DISPONIBLE<span className="emoji"> ⬇️</span>
+          <p className="subtitle--small">
+            Style : House / pop<br />
+            Ambiance : Années 90 / 2000<br />
+            Link : <a href="https://www.mixcloud.com/dj_lex_79/mix-end-1990-2000-house-pop/" target="_blank" rel="noopener noreferrer">Mixcloud</a>
+          </p>
         </p>
-        <p className="subtitle">Sets Afro / Groove / Club & Culture</p>
-        <div className="ig-badge" aria-label="instagram">⌂</div>
+        <InstagramLink />
       </div>
     </section>
   );
