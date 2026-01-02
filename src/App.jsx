@@ -8,9 +8,10 @@ function App() {
   return (
     <div className="frame">
       <Hero />
-      {/* <section className="links">
-        <LinkButton href="https://www.mixcloud.com/dj_lex_79/">Écouter mes mixes sur Mixcloud</LinkButton>
-      </section> */}
+      <section className="links">
+        <LinkButton href="https://www.mixcloud.com/dj_lex_79/mix-end-1990-2000-house-pop/">Mixcloud end 1990-2000 house & pop</LinkButton>
+        {/* <LinkButton href="https://www.mixcloud.com/dj_lex_79/">Écouter mes mixes sur Mixcloud</LinkButton> */}
+      </section>
       <Footer />
     </div>
   );
