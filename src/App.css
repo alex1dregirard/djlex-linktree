@@ -38,6 +38,14 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
   justify-content: center;
 }
 
+.hero--booking {
+  background-image: none;
+  background-color: var(--bg); /* Optional: Set a solid background color */
+  align-items: flex-start; /* Move content to the top */
+  justify-content: flex-start; /* Align content to the top-left */
+  padding-top: 20px; /* Add some spacing from the top */
+}
+
 .hero__overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
@@ -108,6 +116,21 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
 .instagram-icon { filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); }
 .instagram-link:hover .instagram-icon, .instagram-link:focus-visible .instagram-icon { transform: scale(1.06); }
 
+/* Booking page styles */
+.booking-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center content horizontally */
+  padding-top: 20px; /* Add spacing from the top */
+}
+
+.booking-content {
+  width: 100%;
+  max-width: 540px; /* Match the frame width */
+  padding: 20px;
+}
+
 /* Responsive tweaks */
 @media (min-width: 768px) {
   .title { font-size: 52px; }
@@ -119,3 +142,10 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
   .link-btn { transition: none; }
   .instagram-link:hover .instagram-icon, .instagram-link:focus-visible .instagram-icon { transform: none; }
 }
+
+
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.gallery-card { background: rgba(255,255,255,0.08); border: 1px solid var(--border); }
+.gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 480px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
