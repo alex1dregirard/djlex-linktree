@@ -1,0 +1,90 @@
+/* Global theme */
+:root {
+  --bg: #6b5a41; /* warm brown */
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.85);
+  --border: rgba(255, 255, 255, 0.35);
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+html, body, #root { height: 100%; }
+body { background: #f4f1ec; margin: 0; color: var(--text); }
+
+/* Mobile card frame (like Linktree preview) */
+.frame {
+  max-width: 540px;
+  margin: 24px auto;
+  background: var(--bg);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 56vh;
+  background-image: url('/logo-lex-vinyl.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.35) 45%,
+    var(--bg) 85%
+  );
+}
+
+.hero__content {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 24px 20px 28px;
+}
+
+.title { font-size: 40px; line-height: 1.1; margin: 0 0 6px; }
+.subtitle { color: var(--muted); margin: 6px 0; }
+.emoji { margin-right: 8px; }
+
+.ig-badge {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 2px solid var(--border); color: var(--text);
+  display: inline-flex; align-items: center; justify-content: center;
+  margin: 16px auto 4px; font-weight: 700; backdrop-filter: blur(2px);
+}
+
+/* Links section */
+.links { padding: 18px; }
+.link-btn {
+  width: 100%;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 18px;
+  margin: 12px 0;
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; text-decoration: none; font-weight: 600;
+}
+.link-btn .dots { margin-left: auto; opacity: .7; }
+
+/* CTA */
+.cta-wrap { padding: 12px 18px 24px; }
+.cta {
+  display: block; text-align: center;
+  background: #fff; color: #111; font-weight: 700;
+  border-radius: 999px; padding: 16px 18px; text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+/* Footer */
+.footer { color: rgba(255,255,255,.75); text-align: center; padding: 18px; }
+.footer a { color: rgba(255,255,255,.75); text-decoration: none; }
+.sep { margin: 0 8px; opacity: .8; }
