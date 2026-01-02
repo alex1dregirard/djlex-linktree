@@ -9,7 +9,8 @@ const Hero = () => {
         <h1 className="title">dj lex</h1>
         <p className="subtitle">
           <span className="emoji">🎧</span>
-          NOUVEAU MIX DISPONIBLE
+          {' '}NOUVEAU MIX DISPONIBLE{' '}
+          <span className="emoji">🎧</span>
         </p>
         <div className="subtitle subtitle--small">
           Style : House / pop<br />
