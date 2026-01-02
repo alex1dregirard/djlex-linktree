@@ -9,7 +9,7 @@ function App() {
     <div className="frame">
       <Hero />
       <section className="links">
-        <LinkButton href="https://www.mixcloud.com/dj_lex_79/">Listen my mixes on Mixcloud</LinkButton>
+        <LinkButton href="https://www.mixcloud.com/dj_lex_79/">Écouter mes mixes sur Mixcloud</LinkButton>
       </section>
       <Footer />
     </div>

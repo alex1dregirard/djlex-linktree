@@ -5,6 +5,7 @@
   --muted: rgba(255, 255, 255, 0.85);
   --border: rgba(255, 255, 255, 0.35);
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --accent: #ffd54f; /* warm highlight */
 }
 
 html, body, #root { height: 100%; }
@@ -13,24 +14,22 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
 /* Mobile card frame (like Linktree preview) */
 .frame {
   max-width: 540px;
-  margin: 0 auto;                 /* no outer vertical gap so footer reaches screen bottom */
+  margin: 0 auto;
   background: var(--bg);
   border-radius: 28px;
   box-shadow: var(--shadow);
   overflow: hidden;
-  min-height: 100vh;              /* fill full viewport */
-  position: relative;             /* enable absolute footer */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 92px;           /* reserve space so footer doesn't overlap content */
 }
 
 /* Hero */
 .hero {
   position: relative;
-  min-height: calc(100vh - 92px); /* leave room for footer */
+  min-height: 70vh;
   background-image: url('/logo-lex-vinyl.jpeg');
-  background-size: cover;
+  background-size: cover;      /* logo uses ~33% of hero height */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -51,11 +50,12 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
 .hero__content {
   position: relative; z-index: 1;
   text-align: center;
-  padding: 24px 20px 28px;
+  padding: 24px 20px 32px;
 }
 
 .title { font-size: 42px; line-height: 1.1; margin: 0 0 6px; letter-spacing: 0.5px; }
 .subtitle { color: var(--muted); margin: 6px 0; }
+.subtitle--small { font-size: 0.95rem; color: var(--muted); }
 .emoji { margin-right: 8px; }
 
 .ig-badge {
@@ -70,13 +70,20 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
 .link-btn {
   width: 100%;
   color: var(--text);
-  background: transparent;
+  background: rgba(255,255,255,0.06);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 18px 18px;
+  border-radius: 10px;
+  padding: 16px 18px;
   margin: 12px 0;
   display: flex; align-items: center; justify-content: center;
   gap: 10px; text-decoration: none; font-weight: 600;
+  transition: transform .12s ease, background-color .12s ease, border-color .12s ease;
+}
+.link-btn:hover, .link-btn:focus-visible {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.55);
+  transform: translateY(-1px);
+  outline: none;
 }
 .link-btn .dots { margin-left: auto; opacity: .7; }
 
@@ -89,10 +96,25 @@ body { background: #f4f1ec; margin: 0; color: var(--text); }
   box-shadow: 0 10px 24px rgba(0,0,0,.25);
 }
 
-/* Footer */
-.footer {
-  color: rgba(255,255,255,.75); text-align: center; padding: 18px;
-  position: absolute; bottom: 0; left: 0; right: 0; /* pin to screen bottom */
-}
+/* Footer (flex sticky) */
+.footer { color: rgba(255,255,255,.75); text-align: center; padding: 18px; margin-top: auto; }
 .footer a { color: rgba(255,255,255,.75); text-decoration: none; }
+.footer a:hover, .footer a:focus-visible { color: #fff; text-decoration: underline; outline: none; }
 .sep { margin: 0 8px; opacity: .8; }
+
+/* Instagram link */
+.instagram-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; }
+.instagram-icon { filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); }
+.instagram-link:hover .instagram-icon, .instagram-link:focus-visible .instagram-icon { transform: scale(1.06); }
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .title { font-size: 52px; }
+  .subtitle--small { font-size: 1rem; }
+  .hero { min-height: 72vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-btn { transition: none; }
+  .instagram-link:hover .instagram-icon, .instagram-link:focus-visible .instagram-icon { transform: none; }
+}
