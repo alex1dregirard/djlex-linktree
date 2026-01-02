@@ -4,11 +4,12 @@ import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Booking from './pages/Booking';
+import AnalyticsTracker from './AnalyticsTracker';
 
 function App() {
-  
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
