@@ -1,18 +1,22 @@
-import React from 'react';
-import Hero from './components/Hero';
-import LinkButton from './components/LinkButton';
-import Footer from './components/Footer';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Gallery from './pages/Gallery';
+import About from './pages/About';
+import Booking from './pages/Booking';
+import AnalyticsTracker from './AnalyticsTracker';
 
 function App() {
   return (
-    <div className="frame">
-      <Hero />
-      {/* <section className="links">
-        <LinkButton href="https://www.mixcloud.com/dj_lex_79/">Écouter mes mixes sur Mixcloud</LinkButton>
-      </section> */}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <AnalyticsTracker />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/booking" element={<Booking />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
