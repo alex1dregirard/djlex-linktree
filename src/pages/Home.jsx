@@ -18,7 +18,7 @@ const Home = () => (
         <span className="dots">⋮</span>
       </Link> */}
       <Link to="/booking" className="link-btn" style={{ textDecoration: 'none' }}>
-        Réservations / Contact
+        Prestations / Contact
         <span className="dots">⋮</span>
       </Link>
     </section>
